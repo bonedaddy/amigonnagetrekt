@@ -19,18 +19,20 @@ func main() {
 		os.Exit(1)
 	}
 	start := time.Now()
-	for _, f := range files {
-		ff, err := os.Open(dirPath + "/" + f.Name())
-		if err != nil {
-			log.Fatal(err)
-			os.Exit(1)
+	{
+		for _, f := range files {
+			ff, err := os.Open(dirPath + "/" + f.Name())
+			if err != nil {
+				log.Fatal(err)
+				os.Exit(1)
+			}
+			var out interface{}
+			if err := json.NewDecoder(ff).Decode(&out); err != nil {
+				log.Fatal(err)
+				os.Exit(1)
+			}
+			ff.Close()
 		}
-		var out interface{}
-		if err := json.NewDecoder(ff).Decode(&out); err != nil {
-			log.Fatal(err)
-			os.Exit(1)
-		}
-		ff.Close()
 	}
 	end := time.Now()
 	diff := end.Sub(start)
