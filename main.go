@@ -20,9 +20,6 @@ func main() {
 	}
 	start := time.Now()
 	for _, f := range files {
-		if f.IsDir() {
-			continue
-		}
 		ff, err := os.Open(dirPath + "/" + f.Name())
 		if err != nil {
 			log.Fatal(err)
