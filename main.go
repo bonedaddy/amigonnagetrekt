@@ -1,8 +1,8 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"time"
@@ -28,13 +28,12 @@ func main() {
 			log.Fatal(err)
 			os.Exit(1)
 		}
-		data, err := ioutil.ReadAll(ff)
-		if err != nil {
+		var out interface{}
+		if err := json.NewDecoder(ff).Decode(&out); err != nil {
 			log.Fatal(err)
 			os.Exit(1)
 		}
 		ff.Close()
-		_ = data
 	}
 	end := time.Now()
 	diff := end.Sub(start)
