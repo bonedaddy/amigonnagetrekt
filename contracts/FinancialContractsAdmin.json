@@ -1,0 +1,3012 @@
+{
+  "contractName": "FinancialContractsAdmin",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "newMember",
+          "type": "address"
+        }
+      ],
+      "name": "addMember",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMember",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "memberToCheck",
+          "type": "address"
+        }
+      ],
+      "name": "holdsRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "memberToRemove",
+          "type": "address"
+        }
+      ],
+      "name": "removeMember",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "newMember",
+          "type": "address"
+        }
+      ],
+      "name": "resetMember",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "financialContract",
+          "type": "address"
+        }
+      ],
+      "name": "callEmergencyShutdown",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "financialContract",
+          "type": "address"
+        }
+      ],
+      "name": "callRemargin",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"newMember\",\"type\":\"address\"}],\"name\":\"addMember\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"financialContract\",\"type\":\"address\"}],\"name\":\"callEmergencyShutdown\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"financialContract\",\"type\":\"address\"}],\"name\":\"callRemargin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"}],\"name\":\"getMember\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"memberToCheck\",\"type\":\"address\"}],\"name\":\"holdsRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"memberToRemove\",\"type\":\"address\"}],\"name\":\"removeMember\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"newMember\",\"type\":\"address\"}],\"name\":\"resetMember\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Allows appropriately permissioned admin roles to interact with financial contracts.\",\"methods\":{\"addMember(uint256,address)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, shared role or if the caller is not a member of the managing role for `roleId`.\"},\"callEmergencyShutdown(address)\":{\"details\":\"Calls emergency shutdown on the provided financial contract.\"},\"callRemargin(address)\":{\"details\":\"Calls remargin on the provided financial contract.\"},\"getMember(uint256)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, exclusive role.\"},\"holdsRole(uint256,address)\":{\"details\":\"Reverts if roleId does not correspond to an initialized role.\"},\"removeMember(uint256,address)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, shared role or if the caller is not a member of the managing role for `roleId`.\"},\"resetMember(uint256,address)\":{\"details\":\"Reverts if the caller is not a member of the managing role for `roleId` or if `roleId` is not an initialized, exclusive role.\"}},\"title\":\"Admin for financial contracts in the UMA system.\"},\"userdoc\":{\"methods\":{\"addMember(uint256,address)\":{\"notice\":\"Adds `newMember` to the shared role, `roleId`.\"},\"getMember(uint256)\":{\"notice\":\"Gets the current holder of the exclusive role, `roleId`.\"},\"holdsRole(uint256,address)\":{\"notice\":\"Whether `memberToCheck` is a member of roleId.\"},\"removeMember(uint256,address)\":{\"notice\":\"Removes `memberToRemove` from the shared role, `roleId`.\"},\"resetMember(uint256,address)\":{\"notice\":\"Changes the exclusive role holder of `roleId` to `newMember`.\"}}}},\"settings\":{\"compilationTarget\":{\"/home/mattczernik/Workspace/uma/protocol/core/contracts/FinancialContractsAdmin.sol\":\"FinancialContractsAdmin\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/mattczernik/Workspace/uma/protocol/core/contracts/AdministrateeInterface.sol\":{\"keccak256\":\"0x7526b383b0c471a6a7b44a013a4a1f7e30538c698079c3f73881ed776466be48\",\"urls\":[\"bzz-raw://0b8bde0bee4543b57833a10ccb7e61d6a52848f497014f9abb4ec46ddc33c695\",\"dweb:/ipfs/QmSdkQhJHBnr9Lr416pNEViv4a6XBJfrvoVVJVFu4j2svM\"]},\"/home/mattczernik/Workspace/uma/protocol/core/contracts/FinancialContractsAdmin.sol\":{\"keccak256\":\"0xe74e357539795feb209d19f13c630a820f9b68ffbeadcc84e5b3014733867bda\",\"urls\":[\"bzz-raw://88925533305a81794728c5a84fc462c66868533bfe38f6dd2c492f9093f1a534\",\"dweb:/ipfs/QmcV9mFX7AHWekuQ1r6zzCSxSxDVEwXt7fdgSREJuMbnMB\"]},\"/home/mattczernik/Workspace/uma/protocol/core/contracts/MultiRole.sol\":{\"keccak256\":\"0xa66e77338b289f7f247819d6e19fec3d16c5c45cc149452183fbbb1d9883ecd0\",\"urls\":[\"bzz-raw://dbfdf45c05f4eda7411249ee1653ad48a3a76d1af6591379958cb6cce25f69bc\",\"dweb:/ipfs/QmYzFaG5dbNMu99V7dF4aFf93SwCWxFpc4bgAWF55R9tsV\"]}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b506200003f600060028111156200002457fe5b600060028111156200003257fe5b33620000cf60201b60201c565b6200009d600160028111156200005157fe5b600060028111156200005f57fe5b6000604051908082528060200260200182016040528015620000905781602001602082028038833980820191505090505b506200028160201b60201c565b620000c9600280811115620000ae57fe5b60006002811115620000bc57fe5b33620000cf60201b60201c565b620005bf565b8260006002811115620000de57fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156200010d57fe5b1462000181576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f43616e6e6f74207573652061207072652d6578697374696e6720726f6c65000081525060200191505060405180910390fd5b6000806000868152602001908152602001600020905060018160010160006101000a81548160ff02191690836002811115620001b957fe5b0217905550838160000181905550620001e483826002016200043360201b62000c611790919060201c565b60006002811115620001f257fe5b60008086815260200190815260200160002060010160009054906101000a900460ff1660028111156200022157fe5b14156200027a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252603c81526020018062001375603c913960400191505060405180910390fd5b5050505050565b82600060028111156200029057fe5b60008083815260200190815260200160002060010160009054906101000a900460ff166002811115620002bf57fe5b1462000333576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f43616e6e6f74207573652061207072652d6578697374696e6720726f6c65000081525060200191505060405180910390fd5b6000806000868152602001908152602001600020905060028160010160006101000a81548160ff021916908360028111156200036b57fe5b02179055508381600001819055506200039683826003016200044960201b62000c6f1790919060201c565b60006002811115620003a457fe5b60008086815260200190815260200160002060010160009054906101000a900460ff166002811115620003d357fe5b14156200042c576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526038815260200180620013d46038913960400191505060405180910390fd5b5050505050565b6200044582826200049260201b60201c565b5050565b60008090505b81518110156200048d576200047f838383815181106200046b57fe5b60200260200101516200056160201b60201c565b80806001019150506200044f565b505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156200051a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526023815260200180620013b16023913960400191505060405180910390fd5b808260000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b610da680620005cf6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c806374d0a6761161005b57806374d0a676146101585780637cdc1cb9146101a6578063ab3545e51461020c578063d97c05be1461027a5761007d565b80630caf412114610082578063547e1c40146100c65780636be7658b1461010a575b600080fd5b6100c46004803603602081101561009857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102c8565b005b610108600480360360208110156100dc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061039d565b005b6101566004803603604081101561012057600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610473565b005b6101a46004803603604081101561016e57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105a6565b005b6101f2600480360360408110156101bc57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106d9565b604051808215151515815260200191505060405180910390f35b6102386004803603602081101561022257600080fd5b8101908080359060200190929190505050610807565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102c66004803603604081101561029057600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108c0565b005b6002808111156102d457fe5b6102de81336106d9565b610333576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610d096022913960400191505060405180910390fd5b60008290508073ffffffffffffffffffffffffffffffffffffffff16633403c2fc6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561038057600080fd5b505af1158015610394573d6000803e3d6000fd5b50505050505050565b600160028111156103aa57fe5b6103b481336106d9565b610409576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610d096022913960400191505060405180910390fd5b60008290508073ffffffffffffffffffffffffffffffffffffffff1663bda02e776040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561045657600080fd5b505af115801561046a573d6000803e3d6000fd5b50505050505050565b8160028081111561048057fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156104ae57fe5b14610504576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602c815260200180610cdd602c913960400191505060405180910390fd5b8261052460008083815260200190815260200160002060000154336106d9565b610579576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610d4e6024913960400191505060405180910390fd5b6105a0836000808781526020019081526020016000206003016109f490919063ffffffff16565b50505050565b816002808111156105b357fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156105e157fe5b14610637576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602c815260200180610cdd602c913960400191505060405180910390fd5b8261065760008083815260200190815260200160002060000154336106d9565b6106ac576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610d4e6024913960400191505060405180910390fd5b6106d383600080878152602001908152602001600020600301610a5290919063ffffffff16565b50505050565b6000806000808581526020019081526020016000209050600160028111156106fd57fe5b8160010160009054906101000a900460ff16600281111561071a57fe5b141561073e576107368382600201610ab090919063ffffffff16565b915050610801565b60028081111561074a57fe5b8160010160009054906101000a900460ff16600281111561076757fe5b141561078b576107838382600301610b0d90919063ffffffff16565b915050610801565b60006107ff576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f496e76616c696420726f6c65496400000000000000000000000000000000000081525060200191505060405180910390fd5b505b92915050565b6000816001600281111561081757fe5b60008083815260200190815260200160002060010160009054906101000a900460ff16600281111561084557fe5b1461089b576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602f815260200180610cae602f913960400191505060405180910390fd5b6108b8600080858152602001908152602001600020600201610b66565b915050919050565b81600160028111156108ce57fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156108fc57fe5b14610952576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602f815260200180610cae602f913960400191505060405180910390fd5b8261097260008083815260200190815260200160002060000154336106d9565b6109c7576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610d4e6024913960400191505060405180910390fd5b6109ee83600080878152602001908152602001600020600201610b9490919063ffffffff16565b50505050565b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008173ffffffffffffffffffffffffffffffffffffffff168360000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614905092915050565b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b60008160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610c1a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526023815260200180610d2b6023913960400191505060405180910390fd5b808260000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b610c6b8282610b94565b5050565b60008090505b8151811015610ca857610c9b83838381518110610c8e57fe5b6020026020010151610a52565b8080600101915050610c75565b50505056fe4d7573742062652063616c6c6564206f6e20616e20696e697469616c697a6564204578636c757369766520726f6c654d7573742062652063616c6c6564206f6e20616e20696e697469616c697a65642053686172656420726f6c6553656e64657220646f6573206e6f7420686f6c6420726571756972656420726f6c6543616e6e6f742073657420616e206578636c757369766520726f6c6520746f2030783043616e206f6e6c792062652063616c6c6564206279206120726f6c65206d616e61676572a265627a7a72315820faff8ebf9ea56b001505e0c0862994b61b6445370176d0766cdcb5cd656965f064736f6c634300050d0032417474656d7074656420746f2075736520616e20696e76616c696420726f6c6520746f206d616e61676520616e206578636c757369766520726f6c6543616e6e6f742073657420616e206578636c757369766520726f6c6520746f20307830417474656d7074656420746f2075736520616e20696e76616c696420726f6c6520746f206d616e61676520612073686172656420726f6c65",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c806374d0a6761161005b57806374d0a676146101585780637cdc1cb9146101a6578063ab3545e51461020c578063d97c05be1461027a5761007d565b80630caf412114610082578063547e1c40146100c65780636be7658b1461010a575b600080fd5b6100c46004803603602081101561009857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102c8565b005b610108600480360360208110156100dc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061039d565b005b6101566004803603604081101561012057600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610473565b005b6101a46004803603604081101561016e57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105a6565b005b6101f2600480360360408110156101bc57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106d9565b604051808215151515815260200191505060405180910390f35b6102386004803603602081101561022257600080fd5b8101908080359060200190929190505050610807565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102c66004803603604081101561029057600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108c0565b005b6002808111156102d457fe5b6102de81336106d9565b610333576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610d096022913960400191505060405180910390fd5b60008290508073ffffffffffffffffffffffffffffffffffffffff16633403c2fc6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561038057600080fd5b505af1158015610394573d6000803e3d6000fd5b50505050505050565b600160028111156103aa57fe5b6103b481336106d9565b610409576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610d096022913960400191505060405180910390fd5b60008290508073ffffffffffffffffffffffffffffffffffffffff1663bda02e776040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561045657600080fd5b505af115801561046a573d6000803e3d6000fd5b50505050505050565b8160028081111561048057fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156104ae57fe5b14610504576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602c815260200180610cdd602c913960400191505060405180910390fd5b8261052460008083815260200190815260200160002060000154336106d9565b610579576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610d4e6024913960400191505060405180910390fd5b6105a0836000808781526020019081526020016000206003016109f490919063ffffffff16565b50505050565b816002808111156105b357fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156105e157fe5b14610637576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602c815260200180610cdd602c913960400191505060405180910390fd5b8261065760008083815260200190815260200160002060000154336106d9565b6106ac576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610d4e6024913960400191505060405180910390fd5b6106d383600080878152602001908152602001600020600301610a5290919063ffffffff16565b50505050565b6000806000808581526020019081526020016000209050600160028111156106fd57fe5b8160010160009054906101000a900460ff16600281111561071a57fe5b141561073e576107368382600201610ab090919063ffffffff16565b915050610801565b60028081111561074a57fe5b8160010160009054906101000a900460ff16600281111561076757fe5b141561078b576107838382600301610b0d90919063ffffffff16565b915050610801565b60006107ff576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f496e76616c696420726f6c65496400000000000000000000000000000000000081525060200191505060405180910390fd5b505b92915050565b6000816001600281111561081757fe5b60008083815260200190815260200160002060010160009054906101000a900460ff16600281111561084557fe5b1461089b576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602f815260200180610cae602f913960400191505060405180910390fd5b6108b8600080858152602001908152602001600020600201610b66565b915050919050565b81600160028111156108ce57fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156108fc57fe5b14610952576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602f815260200180610cae602f913960400191505060405180910390fd5b8261097260008083815260200190815260200160002060000154336106d9565b6109c7576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610d4e6024913960400191505060405180910390fd5b6109ee83600080878152602001908152602001600020600201610b9490919063ffffffff16565b50505050565b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008173ffffffffffffffffffffffffffffffffffffffff168360000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614905092915050565b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b60008160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610c1a576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526023815260200180610d2b6023913960400191505060405180910390fd5b808260000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b610c6b8282610b94565b5050565b60008090505b8151811015610ca857610c9b83838381518110610c8e57fe5b6020026020010151610a52565b8080600101915050610c75565b50505056fe4d7573742062652063616c6c6564206f6e20616e20696e697469616c697a6564204578636c757369766520726f6c654d7573742062652063616c6c6564206f6e20616e20696e697469616c697a65642053686172656420726f6c6553656e64657220646f6573206e6f7420686f6c6420726571756972656420726f6c6543616e6e6f742073657420616e206578636c757369766520726f6c6520746f2030783043616e206f6e6c792062652063616c6c6564206279206120726f6c65206d616e61676572a265627a7a72315820faff8ebf9ea56b001505e0c0862994b61b6445370176d0766cdcb5cd656965f064736f6c634300050d0032",
+  "sourceMap": "251:1335:6:-;;;619:306;8:9:-1;5:2;;;30:1;27;20:12;5:2;619:306:6;650:80;676:16;671:22;;;;;;;;700:16;695:22;;;;;;;;719:10;650:20;;;:80;;:::i;:::-;740:81;763:14;758:20;;;;;;;;785:16;780:22;;;;;;;;818:1;804:16;;;;;;;;;;;;;;;;;;;;;;29:2:-1;21:6;17:15;117:4;105:10;97:6;88:34;148:4;140:6;136:17;126:27;;0:157;804:16:6;;;;740:17;;;:81;;:::i;:::-;831:87;857:23;852:29;;;;;;;;888:16;883:22;;;;;;;;907:10;831:20;;;:87;;:::i;:::-;251:1335;;6966:481:12;7094:6;5747:16;5721:42;;;;;;;;:5;:13;5727:6;5721:13;;;;;;;;;;;:22;;;;;;;;;;;;:42;;;;;;;;;5713:85;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7116:17;7136:5;:13;7142:6;7136:13;;;;;;;;;;;7116:33;;7175:18;7159:4;:13;;;:34;;;;;;;;;;;;;;;;;;;;;;;;7223:14;7203:4;:17;;:34;;;;7247:48;7281:13;7247:4;:28;;:33;;;;;;:48;;;;:::i;:::-;7347:16;7313:50;;;;;;;;:5;:21;7319:14;7313:21;;;;;;;;;;;:30;;;;;;;;;;;;:50;;;;;;;;;;7305:135;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5808:1;6966:481;;;;:::o;6150:479::-;6285:6;5747:16;5721:42;;;;;;;;:5;:13;5727:6;5721:13;;;;;;;;;;;:22;;;;;;;;;;;;:42;;;;;;;;;5713:85;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6307:17;6327:5;:13;6333:6;6327:13;;;;;;;;;;;6307:33;;6366:15;6350:4;:13;;;:31;;;;;;;;;;;;;;;;;;;;;;;;6411:14;6391:4;:17;;:34;;;;6435:46;6466:14;6435:4;:25;;:30;;;;;;:46;;;;:::i;:::-;6533:16;6499:50;;;;;;;;:5;:21;6505:14;6499:21;;;;;;;;;;;:30;;;;;;;;;;;;:50;;;;;;;;;;6491:131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5808:1;6150:479;;;;:::o;654:144::-;749:42;761:14;777:13;749:11;;;:42;;:::i;:::-;654:144;;:::o;1393:229::-;1503:6;1512:1;1503:10;;1498:118;1519:14;:21;1515:1;:25;1498:118;;;1561:44;1571:14;1587;1602:1;1587:17;;;;;;;;;;;;;;1561:9;;;:44;;:::i;:::-;1542:3;;;;;;;1498:118;;;;1393:229;;:::o;286:221::-;413:3;392:25;;:9;:25;;;;384:73;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;491:9;467:14;:21;;;:33;;;;;;;;;;;;;;;;;;286:221;;:::o;1077:147::-;1213:4;1175:14;:22;;:35;1198:11;1175:35;;;;;;;;;;;;;;;;:42;;;;;;;;;;;;;;;;;;1077:147;;:::o;251:1335:6:-;;;;;;;",
+  "deployedSourceMap": "251:1335:6:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;251:1335:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1020:253;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1020:253:6;;;;;;;;;;;;;;;;;;;:::i;:::-;;1358:226;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1358:226:6;;;;;;;;;;;;;;;;;;;:::i;:::-;;5173:189:12;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;5173:189:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;4752:173;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4752:173:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3320:433;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3320:433:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;4357:157;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4357:157:12;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;3997:183;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3997:183:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1020:253:6;1107:23;1102:29;;;;;;;;2251::12;2261:6;2269:10;2251:9;:29::i;:::-;2243:76;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1143:36:6;1205:17;1143:80;;1233:13;:31;;;:33;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1233:33:6;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1233:33:6;;;;2329:1:12;1020:253:6;;:::o;1358:226::-;1436:14;1431:20;;;;;;;;2251:29:12;2261:6;2269:10;2251:9;:29::i;:::-;2243:76;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1463:36:6;1525:17;1463:80;;1553:13;:22;;;:24;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1553:24:6;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1553:24:6;;;;2329:1:12;1358:226:6;;:::o;5173:189:12:-;5250:6;3080:15;3054:41;;;;;;;;:5;:13;3060:6;3054:13;;;;;;;;;;;:22;;;;;;;;;;;;:41;;;;;;;;;3046:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5274:6;2514:49;2524:5;:13;2530:6;2524:13;;;;;;;;;;;:26;;;2552:10;2514:9;:49::i;:::-;2506:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5292:63;5340:14;5292:5;:13;5298:6;5292:13;;;;;;;;;;;:34;;:47;;:63;;;;:::i;:::-;3154:1;5173:189;;;:::o;4752:173::-;4821:6;3080:15;3054:41;;;;;;;;:5;:13;3060:6;3054:13;;;;;;;;;;;:22;;;;;;;;;;;;:41;;;;;;;;;3046:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4845:6;2514:49;2524:5;:13;2530:6;2524:13;;;;;;;;;;;:26;;;2552:10;2514:9;:49::i;:::-;2506:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4863:55;4908:9;4863:5;:13;4869:6;4863:13;;;;;;;;;;;:34;;:44;;:55;;;;:::i;:::-;3154:1;4752:173;;;:::o;3320:433::-;3396:4;3412:17;3432:5;:13;3438:6;3432:13;;;;;;;;;;;3412:33;;3476:18;3459:35;;;;;;;;:4;:13;;;;;;;;;;;;:35;;;;;;;;;3455:250;;;3517:52;3555:13;3517:4;:28;;:37;;:52;;;;:::i;:::-;3510:59;;;;;3455:250;3607:15;3590:32;;;;;;;;:4;:13;;;;;;;;;;;;:32;;;;;;;;;3586:119;;;3645:49;3680:13;3645:4;:25;;:34;;:49;;;;:::i;:::-;3638:56;;;;;3586:119;3722:5;3714:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3320:433;;;;;;:::o;4357:157::-;4432:7;4415:6;2810:18;2784:44;;;;;;;;:5;:13;2790:6;2784:13;;;;;;;;;;;:22;;;;;;;;;;;;:44;;;;;;;;;2776:104;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4458:49;:5;:13;4464:6;4458:13;;;;;;;;;;;:37;;:47;:49::i;:::-;4451:56;;4357:157;;;;:::o;3997:183::-;4071:6;2810:18;2784:44;;;;;;;;:5;:13;2790:6;2784:13;;;;;;;;;;;:22;;;;;;;;;;;;:44;;;;;;;;;2776:104;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4095:6;2514:49;2524:5;:13;2530:6;2524:13;;;;;;;;;;;:26;;;2552:10;2514:9;:49::i;:::-;2506:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4113:60;4163:9;4113:5;:13;4119:6;4113:13;;;;;;;;;;;:37;;:49;;:60;;;;:::i;:::-;2890:1;3997:183;;;:::o;1230:157::-;1375:5;1334:14;:22;;:38;1357:14;1334:38;;;;;;;;;;;;;;;;:46;;;;;;;;;;;;;;;;;;1230:157;;:::o;1077:147::-;1213:4;1175:14;:22;;:35;1198:11;1175:35;;;;;;;;;;;;;;;;:42;;;;;;;;;;;;;;;;;;1077:147;;:::o;109:171::-;212:4;260:13;235:38;;:14;:21;;;;;;;;;;;;:38;;;228:45;;109:171;;;;:::o;901:170::-;1004:4;1027:14;:22;;:37;1050:13;1027:37;;;;;;;;;;;;;;;;;;;;;;;;;1020:44;;901:170;;;;:::o;513:135::-;594:7;620:14;:21;;;;;;;;;;;;613:28;;513:135;;;:::o;286:221::-;413:3;392:25;;:9;:25;;;;384:73;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;491:9;467:14;:21;;;:33;;;;;;;;;;;;;;;;;;286:221;;:::o;654:144::-;749:42;761:14;777:13;749:11;:42::i;:::-;654:144;;:::o;1393:229::-;1503:6;1512:1;1503:10;;1498:118;1519:14;:21;1515:1;:25;1498:118;;;1561:44;1571:14;1587;1602:1;1587:17;;;;;;;;;;;;;;1561:9;:44::i;:::-;1542:3;;;;;;;1498:118;;;;1393:229;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"./AdministrateeInterface.sol\";\nimport \"./MultiRole.sol\";\n\n\n/**\n * @title Admin for financial contracts in the UMA system.\n * @dev Allows appropriately permissioned admin roles to interact with financial contracts.\n */\ncontract FinancialContractsAdmin is MultiRole {\n\n    enum Roles {\n        // Can set the `Remargin` and `EmergencyShutdown` roles.\n        Governance,\n        // Is authorized to call `remargin()` on any financial contract in the system.\n        Remargin,\n        // Is authorized to shutdown any financial contract in the system.\n        EmergencyShutdown\n    }\n\n    constructor() public {\n        _createExclusiveRole(uint(Roles.Governance), uint(Roles.Governance), msg.sender);\n        _createSharedRole(uint(Roles.Remargin), uint(Roles.Governance), new address[](0));\n        _createExclusiveRole(uint(Roles.EmergencyShutdown), uint(Roles.Governance), msg.sender);\n    }\n\n    /**\n     * @dev Calls emergency shutdown on the provided financial contract.\n     */\n    function callEmergencyShutdown(address financialContract) external onlyRoleHolder(uint(Roles.EmergencyShutdown)) {\n        AdministrateeInterface administratee = AdministrateeInterface(financialContract);\n        administratee.emergencyShutdown();\n    }\n\n    /**\n     * @dev Calls remargin on the provided financial contract.\n     */\n    function callRemargin(address financialContract) external onlyRoleHolder(uint(Roles.Remargin)) {\n        AdministrateeInterface administratee = AdministrateeInterface(financialContract);\n        administratee.remargin();\n    }\n}\n",
+  "sourcePath": "/home/mattczernik/Workspace/uma/protocol/core/contracts/FinancialContractsAdmin.sol",
+  "ast": {
+    "absolutePath": "/home/mattczernik/Workspace/uma/protocol/core/contracts/FinancialContractsAdmin.sol",
+    "exportedSymbols": {
+      "FinancialContractsAdmin": [
+        727
+      ]
+    },
+    "id": 728,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 626,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "absolutePath": "/home/mattczernik/Workspace/uma/protocol/core/contracts/AdministrateeInterface.sol",
+        "file": "./AdministrateeInterface.sol",
+        "id": 627,
+        "nodeType": "ImportDirective",
+        "scope": 728,
+        "sourceUnit": 203,
+        "src": "25:38:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/mattczernik/Workspace/uma/protocol/core/contracts/MultiRole.sol",
+        "file": "./MultiRole.sol",
+        "id": 628,
+        "nodeType": "ImportDirective",
+        "scope": 728,
+        "sourceUnit": 2064,
+        "src": "64:25:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 629,
+              "name": "MultiRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2063,
+              "src": "287:9:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MultiRole_$2063",
+                "typeString": "contract MultiRole"
+              }
+            },
+            "id": 630,
+            "nodeType": "InheritanceSpecifier",
+            "src": "287:9:6"
+          }
+        ],
+        "contractDependencies": [
+          2063
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Admin for financial contracts in the UMA system.\n@dev Allows appropriately permissioned admin roles to interact with financial contracts.",
+        "fullyImplemented": true,
+        "id": 727,
+        "linearizedBaseContracts": [
+          727,
+          2063
+        ],
+        "name": "FinancialContractsAdmin",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "FinancialContractsAdmin.Roles",
+            "id": 634,
+            "members": [
+              {
+                "id": 631,
+                "name": "Governance",
+                "nodeType": "EnumValue",
+                "src": "390:10:6"
+              },
+              {
+                "id": 632,
+                "name": "Remargin",
+                "nodeType": "EnumValue",
+                "src": "497:8:6"
+              },
+              {
+                "id": 633,
+                "name": "EmergencyShutdown",
+                "nodeType": "EnumValue",
+                "src": "590:17:6"
+              }
+            ],
+            "name": "Roles",
+            "nodeType": "EnumDefinition",
+            "src": "304:309:6"
+          },
+          {
+            "body": {
+              "id": 679,
+              "nodeType": "Block",
+              "src": "640:285:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 639,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "676:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 640,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "676:16:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 638,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "671:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 641,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "671:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 643,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "700:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 644,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "700:16:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 642,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "695:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 645,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "695:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 646,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12276,
+                          "src": "719:3:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 647,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "719:10:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 637,
+                      "name": "_createExclusiveRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2062,
+                      "src": "650:20:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 648,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "650:80:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 649,
+                  "nodeType": "ExpressionStatement",
+                  "src": "650:80:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 652,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "763:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 653,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Remargin",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "763:14:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 651,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "758:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 654,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "758:20:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 656,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "785:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 657,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "785:16:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 655,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "780:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 658,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "780:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 662,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "818:1:6",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            }
+                          ],
+                          "id": 661,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "NewExpression",
+                          "src": "804:13:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_address_$dyn_memory_$",
+                            "typeString": "function (uint256) pure returns (address[] memory)"
+                          },
+                          "typeName": {
+                            "baseType": {
+                              "id": 659,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "808:7:6",
+                              "stateMutability": "nonpayable",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "id": 660,
+                            "length": null,
+                            "nodeType": "ArrayTypeName",
+                            "src": "808:9:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                              "typeString": "address[]"
+                            }
+                          }
+                        },
+                        "id": 663,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "804:16:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_memory",
+                          "typeString": "address[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_address_$dyn_memory",
+                          "typeString": "address[] memory"
+                        }
+                      ],
+                      "id": 650,
+                      "name": "_createSharedRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2011,
+                      "src": "740:17:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_array$_t_address_$dyn_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256,uint256,address[] memory)"
+                      }
+                    },
+                    "id": 664,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "740:81:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 665,
+                  "nodeType": "ExpressionStatement",
+                  "src": "740:81:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 668,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "857:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 669,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "EmergencyShutdown",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "857:23:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 667,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "852:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 670,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "852:29:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 672,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "888:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 673,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "888:16:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 671,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "883:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 674,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "883:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 675,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12276,
+                          "src": "907:3:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 676,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "907:10:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 666,
+                      "name": "_createExclusiveRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2062,
+                      "src": "831:20:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 677,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "831:87:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 678,
+                  "nodeType": "ExpressionStatement",
+                  "src": "831:87:6"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 680,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 635,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "630:2:6"
+            },
+            "returnParameters": {
+              "id": 636,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "640:0:6"
+            },
+            "scope": 727,
+            "src": "619:306:6",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 702,
+              "nodeType": "Block",
+              "src": "1133:140:6",
+              "statements": [
+                {
+                  "assignments": [
+                    692
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 692,
+                      "name": "administratee",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 702,
+                      "src": "1143:36:6",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                        "typeString": "contract AdministrateeInterface"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 691,
+                        "name": "AdministrateeInterface",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 202,
+                        "src": "1143:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                          "typeString": "contract AdministrateeInterface"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 696,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 694,
+                        "name": "financialContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 682,
+                        "src": "1205:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 693,
+                      "name": "AdministrateeInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 202,
+                      "src": "1182:22:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_AdministrateeInterface_$202_$",
+                        "typeString": "type(contract AdministrateeInterface)"
+                      }
+                    },
+                    "id": 695,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1182:41:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                      "typeString": "contract AdministrateeInterface"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1143:80:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 697,
+                        "name": "administratee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 692,
+                        "src": "1233:13:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                          "typeString": "contract AdministrateeInterface"
+                        }
+                      },
+                      "id": 699,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "emergencyShutdown",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 198,
+                      "src": "1233:31:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 700,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1233:33:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 701,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1233:33:6"
+                }
+              ]
+            },
+            "documentation": "@dev Calls emergency shutdown on the provided financial contract.",
+            "id": 703,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 686,
+                          "name": "Roles",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 634,
+                          "src": "1107:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                            "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                          }
+                        },
+                        "id": 687,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "EmergencyShutdown",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1107:23:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Roles_$634",
+                          "typeString": "enum FinancialContractsAdmin.Roles"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Roles_$634",
+                          "typeString": "enum FinancialContractsAdmin.Roles"
+                        }
+                      ],
+                      "id": 685,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1102:4:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint"
+                    },
+                    "id": 688,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1102:29:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 689,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 684,
+                  "name": "onlyRoleHolder",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1742,
+                  "src": "1087:14:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_uint256_$",
+                    "typeString": "modifier (uint256)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1087:45:6"
+              }
+            ],
+            "name": "callEmergencyShutdown",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 683,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 682,
+                  "name": "financialContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 703,
+                  "src": "1051:25:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 681,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1051:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1050:27:6"
+            },
+            "returnParameters": {
+              "id": 690,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1133:0:6"
+            },
+            "scope": 727,
+            "src": "1020:253:6",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 725,
+              "nodeType": "Block",
+              "src": "1453:131:6",
+              "statements": [
+                {
+                  "assignments": [
+                    715
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 715,
+                      "name": "administratee",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 725,
+                      "src": "1463:36:6",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                        "typeString": "contract AdministrateeInterface"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 714,
+                        "name": "AdministrateeInterface",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 202,
+                        "src": "1463:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                          "typeString": "contract AdministrateeInterface"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 719,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 717,
+                        "name": "financialContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 705,
+                        "src": "1525:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 716,
+                      "name": "AdministrateeInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 202,
+                      "src": "1502:22:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_AdministrateeInterface_$202_$",
+                        "typeString": "type(contract AdministrateeInterface)"
+                      }
+                    },
+                    "id": 718,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1502:41:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                      "typeString": "contract AdministrateeInterface"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1463:80:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 720,
+                        "name": "administratee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 715,
+                        "src": "1553:13:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                          "typeString": "contract AdministrateeInterface"
+                        }
+                      },
+                      "id": 722,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remargin",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 201,
+                      "src": "1553:22:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 723,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1553:24:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 724,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1553:24:6"
+                }
+              ]
+            },
+            "documentation": "@dev Calls remargin on the provided financial contract.",
+            "id": 726,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 709,
+                          "name": "Roles",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 634,
+                          "src": "1436:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                            "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                          }
+                        },
+                        "id": 710,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "Remargin",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1436:14:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Roles_$634",
+                          "typeString": "enum FinancialContractsAdmin.Roles"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Roles_$634",
+                          "typeString": "enum FinancialContractsAdmin.Roles"
+                        }
+                      ],
+                      "id": 708,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1431:4:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint"
+                    },
+                    "id": 711,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1431:20:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 712,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 707,
+                  "name": "onlyRoleHolder",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1742,
+                  "src": "1416:14:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_uint256_$",
+                    "typeString": "modifier (uint256)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1416:36:6"
+              }
+            ],
+            "name": "callRemargin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 706,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 705,
+                  "name": "financialContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 726,
+                  "src": "1380:25:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 704,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1380:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1379:27:6"
+            },
+            "returnParameters": {
+              "id": 713,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1453:0:6"
+            },
+            "scope": 727,
+            "src": "1358:226:6",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 728,
+        "src": "251:1335:6"
+      }
+    ],
+    "src": "0:1587:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/mattczernik/Workspace/uma/protocol/core/contracts/FinancialContractsAdmin.sol",
+    "exportedSymbols": {
+      "FinancialContractsAdmin": [
+        727
+      ]
+    },
+    "id": 728,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 626,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "absolutePath": "/home/mattczernik/Workspace/uma/protocol/core/contracts/AdministrateeInterface.sol",
+        "file": "./AdministrateeInterface.sol",
+        "id": 627,
+        "nodeType": "ImportDirective",
+        "scope": 728,
+        "sourceUnit": 203,
+        "src": "25:38:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/mattczernik/Workspace/uma/protocol/core/contracts/MultiRole.sol",
+        "file": "./MultiRole.sol",
+        "id": 628,
+        "nodeType": "ImportDirective",
+        "scope": 728,
+        "sourceUnit": 2064,
+        "src": "64:25:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 629,
+              "name": "MultiRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2063,
+              "src": "287:9:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MultiRole_$2063",
+                "typeString": "contract MultiRole"
+              }
+            },
+            "id": 630,
+            "nodeType": "InheritanceSpecifier",
+            "src": "287:9:6"
+          }
+        ],
+        "contractDependencies": [
+          2063
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Admin for financial contracts in the UMA system.\n@dev Allows appropriately permissioned admin roles to interact with financial contracts.",
+        "fullyImplemented": true,
+        "id": 727,
+        "linearizedBaseContracts": [
+          727,
+          2063
+        ],
+        "name": "FinancialContractsAdmin",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "FinancialContractsAdmin.Roles",
+            "id": 634,
+            "members": [
+              {
+                "id": 631,
+                "name": "Governance",
+                "nodeType": "EnumValue",
+                "src": "390:10:6"
+              },
+              {
+                "id": 632,
+                "name": "Remargin",
+                "nodeType": "EnumValue",
+                "src": "497:8:6"
+              },
+              {
+                "id": 633,
+                "name": "EmergencyShutdown",
+                "nodeType": "EnumValue",
+                "src": "590:17:6"
+              }
+            ],
+            "name": "Roles",
+            "nodeType": "EnumDefinition",
+            "src": "304:309:6"
+          },
+          {
+            "body": {
+              "id": 679,
+              "nodeType": "Block",
+              "src": "640:285:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 639,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "676:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 640,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "676:16:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 638,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "671:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 641,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "671:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 643,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "700:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 644,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "700:16:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 642,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "695:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 645,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "695:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 646,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12276,
+                          "src": "719:3:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 647,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "719:10:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 637,
+                      "name": "_createExclusiveRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2062,
+                      "src": "650:20:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 648,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "650:80:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 649,
+                  "nodeType": "ExpressionStatement",
+                  "src": "650:80:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 652,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "763:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 653,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Remargin",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "763:14:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 651,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "758:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 654,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "758:20:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 656,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "785:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 657,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "785:16:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 655,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "780:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 658,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "780:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 662,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "818:1:6",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            }
+                          ],
+                          "id": 661,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "NewExpression",
+                          "src": "804:13:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_address_$dyn_memory_$",
+                            "typeString": "function (uint256) pure returns (address[] memory)"
+                          },
+                          "typeName": {
+                            "baseType": {
+                              "id": 659,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "808:7:6",
+                              "stateMutability": "nonpayable",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "id": 660,
+                            "length": null,
+                            "nodeType": "ArrayTypeName",
+                            "src": "808:9:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                              "typeString": "address[]"
+                            }
+                          }
+                        },
+                        "id": 663,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "804:16:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_memory",
+                          "typeString": "address[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_address_$dyn_memory",
+                          "typeString": "address[] memory"
+                        }
+                      ],
+                      "id": 650,
+                      "name": "_createSharedRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2011,
+                      "src": "740:17:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_array$_t_address_$dyn_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256,uint256,address[] memory)"
+                      }
+                    },
+                    "id": 664,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "740:81:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 665,
+                  "nodeType": "ExpressionStatement",
+                  "src": "740:81:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 668,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "857:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 669,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "EmergencyShutdown",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "857:23:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 667,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "852:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 670,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "852:29:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 672,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 634,
+                              "src": "888:5:6",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                                "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                              }
+                            },
+                            "id": 673,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "888:16:6",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$634",
+                              "typeString": "enum FinancialContractsAdmin.Roles"
+                            }
+                          ],
+                          "id": 671,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "883:4:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 674,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "883:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 675,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12276,
+                          "src": "907:3:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 676,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "907:10:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 666,
+                      "name": "_createExclusiveRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2062,
+                      "src": "831:20:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 677,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "831:87:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 678,
+                  "nodeType": "ExpressionStatement",
+                  "src": "831:87:6"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 680,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 635,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "630:2:6"
+            },
+            "returnParameters": {
+              "id": 636,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "640:0:6"
+            },
+            "scope": 727,
+            "src": "619:306:6",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 702,
+              "nodeType": "Block",
+              "src": "1133:140:6",
+              "statements": [
+                {
+                  "assignments": [
+                    692
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 692,
+                      "name": "administratee",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 702,
+                      "src": "1143:36:6",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                        "typeString": "contract AdministrateeInterface"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 691,
+                        "name": "AdministrateeInterface",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 202,
+                        "src": "1143:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                          "typeString": "contract AdministrateeInterface"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 696,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 694,
+                        "name": "financialContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 682,
+                        "src": "1205:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 693,
+                      "name": "AdministrateeInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 202,
+                      "src": "1182:22:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_AdministrateeInterface_$202_$",
+                        "typeString": "type(contract AdministrateeInterface)"
+                      }
+                    },
+                    "id": 695,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1182:41:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                      "typeString": "contract AdministrateeInterface"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1143:80:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 697,
+                        "name": "administratee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 692,
+                        "src": "1233:13:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                          "typeString": "contract AdministrateeInterface"
+                        }
+                      },
+                      "id": 699,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "emergencyShutdown",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 198,
+                      "src": "1233:31:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 700,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1233:33:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 701,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1233:33:6"
+                }
+              ]
+            },
+            "documentation": "@dev Calls emergency shutdown on the provided financial contract.",
+            "id": 703,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 686,
+                          "name": "Roles",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 634,
+                          "src": "1107:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                            "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                          }
+                        },
+                        "id": 687,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "EmergencyShutdown",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1107:23:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Roles_$634",
+                          "typeString": "enum FinancialContractsAdmin.Roles"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Roles_$634",
+                          "typeString": "enum FinancialContractsAdmin.Roles"
+                        }
+                      ],
+                      "id": 685,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1102:4:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint"
+                    },
+                    "id": 688,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1102:29:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 689,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 684,
+                  "name": "onlyRoleHolder",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1742,
+                  "src": "1087:14:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_uint256_$",
+                    "typeString": "modifier (uint256)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1087:45:6"
+              }
+            ],
+            "name": "callEmergencyShutdown",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 683,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 682,
+                  "name": "financialContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 703,
+                  "src": "1051:25:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 681,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1051:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1050:27:6"
+            },
+            "returnParameters": {
+              "id": 690,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1133:0:6"
+            },
+            "scope": 727,
+            "src": "1020:253:6",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 725,
+              "nodeType": "Block",
+              "src": "1453:131:6",
+              "statements": [
+                {
+                  "assignments": [
+                    715
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 715,
+                      "name": "administratee",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 725,
+                      "src": "1463:36:6",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                        "typeString": "contract AdministrateeInterface"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 714,
+                        "name": "AdministrateeInterface",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 202,
+                        "src": "1463:22:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                          "typeString": "contract AdministrateeInterface"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 719,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 717,
+                        "name": "financialContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 705,
+                        "src": "1525:17:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 716,
+                      "name": "AdministrateeInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 202,
+                      "src": "1502:22:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_AdministrateeInterface_$202_$",
+                        "typeString": "type(contract AdministrateeInterface)"
+                      }
+                    },
+                    "id": 718,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1502:41:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                      "typeString": "contract AdministrateeInterface"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1463:80:6"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 720,
+                        "name": "administratee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 715,
+                        "src": "1553:13:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                          "typeString": "contract AdministrateeInterface"
+                        }
+                      },
+                      "id": 722,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remargin",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 201,
+                      "src": "1553:22:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 723,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1553:24:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 724,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1553:24:6"
+                }
+              ]
+            },
+            "documentation": "@dev Calls remargin on the provided financial contract.",
+            "id": 726,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 709,
+                          "name": "Roles",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 634,
+                          "src": "1436:5:6",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Roles_$634_$",
+                            "typeString": "type(enum FinancialContractsAdmin.Roles)"
+                          }
+                        },
+                        "id": 710,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "Remargin",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1436:14:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Roles_$634",
+                          "typeString": "enum FinancialContractsAdmin.Roles"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Roles_$634",
+                          "typeString": "enum FinancialContractsAdmin.Roles"
+                        }
+                      ],
+                      "id": 708,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1431:4:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint"
+                    },
+                    "id": 711,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1431:20:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 712,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 707,
+                  "name": "onlyRoleHolder",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1742,
+                  "src": "1416:14:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_uint256_$",
+                    "typeString": "modifier (uint256)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1416:36:6"
+              }
+            ],
+            "name": "callRemargin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 706,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 705,
+                  "name": "financialContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 726,
+                  "src": "1380:25:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 704,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1380:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1379:27:6"
+            },
+            "returnParameters": {
+              "id": 713,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1453:0:6"
+            },
+            "scope": 727,
+            "src": "1358:226:6",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 728,
+        "src": "251:1335:6"
+      }
+    ],
+    "src": "0:1587:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-11-30T00:32:28.996Z",
+  "devdoc": {
+    "details": "Allows appropriately permissioned admin roles to interact with financial contracts.",
+    "methods": {
+      "addMember(uint256,address)": {
+        "details": "Reverts if `roleId` does not represent an initialized, shared role or if the caller is not a member of the managing role for `roleId`."
+      },
+      "callEmergencyShutdown(address)": {
+        "details": "Calls emergency shutdown on the provided financial contract."
+      },
+      "callRemargin(address)": {
+        "details": "Calls remargin on the provided financial contract."
+      },
+      "getMember(uint256)": {
+        "details": "Reverts if `roleId` does not represent an initialized, exclusive role."
+      },
+      "holdsRole(uint256,address)": {
+        "details": "Reverts if roleId does not correspond to an initialized role."
+      },
+      "removeMember(uint256,address)": {
+        "details": "Reverts if `roleId` does not represent an initialized, shared role or if the caller is not a member of the managing role for `roleId`."
+      },
+      "resetMember(uint256,address)": {
+        "details": "Reverts if the caller is not a member of the managing role for `roleId` or if `roleId` is not an initialized, exclusive role."
+      }
+    },
+    "title": "Admin for financial contracts in the UMA system."
+  },
+  "userdoc": {
+    "methods": {
+      "addMember(uint256,address)": {
+        "notice": "Adds `newMember` to the shared role, `roleId`."
+      },
+      "getMember(uint256)": {
+        "notice": "Gets the current holder of the exclusive role, `roleId`."
+      },
+      "holdsRole(uint256,address)": {
+        "notice": "Whether `memberToCheck` is a member of roleId."
+      },
+      "removeMember(uint256,address)": {
+        "notice": "Removes `memberToRemove` from the shared role, `roleId`."
+      },
+      "resetMember(uint256,address)": {
+        "notice": "Changes the exclusive role holder of `roleId` to `newMember`."
+      }
+    }
+  }
+}
